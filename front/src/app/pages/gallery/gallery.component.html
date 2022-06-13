@@ -1,1 +1,13 @@
-<p>gallery works!</p>
+<section class="pets">
+    <h2>pets</h2>
+    <article class="pets__gallery">
+        <figure *ngFor="let pet of pets">
+            <h3>{{pet.breed}}</h3>
+            <img src="{{pet.picture}}" alt="{{pet.breed}}">
+            <p>Caracter: {{pet.caracter}}</p>
+            <p>Tipo de pelo: {{pet.hair_type}}</p>
+            <p>Tamaño: {{pet.size}}</p>
+            <p>Peso: {{pet.weight}}</p>
+        </figure>
+    </article>
+</section>
