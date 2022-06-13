@@ -8,8 +8,8 @@ import { ToolsModule } from './pages/tools/tools.module';
 
 const routes: Routes = [
   {path: "", pathMatch: "full", loadChildren: () => import ("./pages/home/home.module").then(m=>m.HomeModule)},
-  {path: "", pathMatch: "full", loadChildren: () => import ("./pages/gallery/gallery.module").then(m=>m.GalleryModule)},
-  {path: "", pathMatch: "full", loadChildren: () => import ("./pages/tools/tools.module").then(m=>m.ToolsModule)},
+  {path: "gallery", pathMatch: "full", loadChildren: () => import ("./pages/gallery/gallery.module").then(m=>m.GalleryModule)},
+  {path: "tools", pathMatch: "full", loadChildren: () => import ("./pages/tools/tools.module").then(m=>m.ToolsModule)},
 ];
 
 @NgModule({
