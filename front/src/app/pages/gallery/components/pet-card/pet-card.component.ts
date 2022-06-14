@@ -21,5 +21,7 @@ export class PetCardComponent implements OnInit {
     this.petsService.editItem(pet);
     this.router.navigate(["/tools"]);
   }
+
+  
   
 }
