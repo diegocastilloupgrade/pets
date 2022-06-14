@@ -4,3 +4,14 @@
     justify-content: space-around;
     gap:1rem
 }
+
+.buscador {
+    display: flex;
+    justify-content: center;
+}
+input {
+    text-align: center;
+    border-radius: 10px;
+    width: 400px;
+    height: 30px;
+}
