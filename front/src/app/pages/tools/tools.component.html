@@ -1,1 +1,20 @@
-<p>tools works!</p>
+<section>
+    <h2>Tools</h2>
+    <form [formGroup] = "petForm" (ngSubmit) = "onSubmit()" >
+    <label for="breed"> Breed</label>
+    <input type="text" id= "title" formControlName="breed">
+    <label for="picture">Picture</label>
+    <input type="text" id= "picture" formControlName="picture">
+    <label for="caracter">Caracter</label>
+    <input type="text" id="caracter" formControlName="caracter">
+    <label for="hairType">Tipo de Pelo</label>
+    <input type="text" id="hairType" formControlName="hairType">
+    <label for="size">Tamaño</label>
+    <input type="text" id="sixe" formControlName="size">  
+    <label for="weight">Peso</label>
+    <input type="text" id="weight" formControlName="weight">
+    <button type="submit"> PERREKE</button>
+</form>
+
+</section>
+
