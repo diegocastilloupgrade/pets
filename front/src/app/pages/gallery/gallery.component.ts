@@ -8,12 +8,23 @@ import { petInterface } from 'src/app/models/petInterface';
 })
 export class GalleryComponent implements OnInit {
   public pets: petInterface[] = [];
+  public petsFiltrados!: any;
+  
 
   constructor(private petsService: PetsService) {}
 
   ngOnInit(): void {
     this.petsService.getPets().subscribe((data: any) => {
       this.pets = data;
+      this.petsFiltrados = this.pets;
     });
   }
-}
+  public filtrarPet = (valorInput: string) => {
+    this.petsFiltrados = this.pets.filter(pet=> {
+      return pet.breed.toLowerCase().includes(valorInput.toLowerCase());
+    });
+    
+  }}
+
+
+

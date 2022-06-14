@@ -1,3 +1,4 @@
+<input type ="text" #input (keyup) = "filtrarPet(input.value)"/>
 <div class="galleryPets">
-<app-pet-card *ngFor="let pet of pets" [pet]="pet"></app-pet-card>
+<app-pet-card *ngFor="let pet of petsFiltrados" [pet]="pet"></app-pet-card>
 </div>
