@@ -1,15 +1,14 @@
-<section class="pets">
-    <!-- <h2>pets</h2> -->
-    <article class="pets__gallery">
-        <figure>
+<section class="card">
+        <figure class="pets">
             <h3>{{pet.breed}}</h3>
+            <div class="imagen">
             <img src="{{pet.picture}}" alt="{{pet.breed}}">
-            <p>Caracter: {{pet.caracter}}</p>
-            <p>Tipo de pelo: {{pet.hair_type}}</p>
-            <p>Tamaño: {{pet.size}}</p>
-            <p>Peso: {{pet.weight}}</p>
-            <button (click) = "editPet(pet)">EDITAR PERREKE</button>
+        </div>
+            <p><span>Carácter:</span> {{pet.caracter}}</p>
+            <p><span>Tipo de pelo: </span>{{pet.hair_type}}</p>
+            <p><span>Tamaño:</span> {{pet.size}}</p>
+            <p><span>Peso: </span>{{pet.weight}}</p>
+            <button (click) = "editPet(pet)">Editar Perreke</button>
             
         </figure>
-    </article>
 </section>

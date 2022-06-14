@@ -6,12 +6,20 @@ nav {
     align-items: center;
     li {
       margin: 0 1rem;
+      font-size: x-large;
+      box-sizing:content-box;
+      transition: all 0.3s;
+      &:hover{
+        transform:scale(1.1);
+      }
     }
   }
 }
 img {
-  width: 150px;
-  border-radius: 100px;
+  width: 100px;
+  border-radius: 150px;
+  margin: 20px;
+  border: 2px solid white;
 }
 .active {
   font-weight: bold;

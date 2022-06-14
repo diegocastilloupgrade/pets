@@ -2,17 +2,17 @@
     <h2>Tools</h2>
     <form [formGroup] = "petForm" (ngSubmit) = "onSubmit()" >
     <label for="breed"> Breed</label>
-    <input type="text" id= "breed" formControlName="breed">
+    <input type="text" placeholder="Raza" id= "breed" formControlName="breed">
     <label for="picture">Picture</label>
-    <input type="text" id= "picture" formControlName="picture">
-    <label for="caracter">Caracter</label>
-    <input type="text" id="caracter" formControlName="caracter">
-    <label for="hair_type">Tipo de Pelo</label>
-    <input type="text" id="hair_type" formControlName="hair_type">
-    <label for="size">Tamaño</label>
-    <input type="text" id="size" formControlName="size">  
-    <label for="weight">Peso</label>
-    <input type="text" id="weight" formControlName="weight">
+    <input type="text" placeholder="Imagen" id= "picture" formControlName="picture">
+    <label for="caracter">Behavior</label>
+    <input type="text" placeholder="Carácter" id="caracter" formControlName="caracter">
+    <label for="hair_type">Hair Type</label>
+    <input type="text" placeholder="Tipo de Pelo" id="hair_type" formControlName="hair_type">
+    <label for="size">Size</label>
+    <input type="text" placeholder="Tamaño" id="size" formControlName="size">  
+    <label for="weight">Weight</label>
+    <input type="text" placeholder="Peso" id="weight" formControlName="weight">
     <button type="submit"> PERREKE</button>
     <button (click) = "delete()">Delete Perreke</button>
 </form>
