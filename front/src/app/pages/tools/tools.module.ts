@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ToolsRoutingModule } from './tools-routing.module';
 import { ToolsComponent } from './tools.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,9 @@ import { ToolsComponent } from './tools.component';
   ],
   imports: [
     CommonModule,
-    ToolsRoutingModule
+    ToolsRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class ToolsModule { }
