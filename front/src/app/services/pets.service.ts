@@ -9,14 +9,30 @@ export class PetsService {
   constructor(private httpClient: HttpClient) { }
 
   public petData = {
-    breed: "Raza del perreke",
-        caracter: "...",
-        hair_type: "tipo de lope",
-        size: "TAMAÑO",
-        weight: "cuantos kilates",
-        picture: "https://us.123rf.com/450wm/damedeeso/damedeeso1206/damedeeso120600018/14098767-perro-pidiendo-con-un-signo-de-interrogaci%C3%B3n-en-la-parte-superior.jpg",
+    breed: "",
+        caracter: "",
+        hair_type: "",
+        size: "",
+        weight: "",
+        picture: "",
         id: ""
 
+  }
+
+  public clearPet () {
+    this.petData = {
+      breed: "",
+      caracter: "",
+      hair_type: "",
+      size: "",
+      weight: "",
+      picture: "",
+      id: ""
+    }
+  }
+
+  public editItem(item: any) {
+    this.petData = item;
   }
 
   public getPets() {
@@ -27,8 +43,14 @@ public postPet(newPet: any){
   
 }  
 
-public editPet(editedPet: any, petID: any) {
-  return this.httpClient.put("http://localhost:3000/pets/"+ petID, editedPet )
+public putPet( petID: any, editedPet: any) {
+  return this.httpClient.put("http://localhost:3000/pets/" + petID, editedPet )
+}
+
+
+
+public deletePet(petID: any) {
+  return this.httpClient.delete("http://localhost:3000/pets/" + petID)
 }
 
 }

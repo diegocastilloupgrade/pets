@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { PetsService } from 'src/app/services/pets.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tools',
@@ -16,9 +17,12 @@ export class ToolsComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private petsService: PetsService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
+    this.petsService.clearPet();
+
     this.petForm = this.formBuilder.group({
       breed: [
         this.newPets.breed,
@@ -28,7 +32,7 @@ export class ToolsComponent implements OnInit {
         this.newPets.caracter,
         [Validators.required, Validators.minLength(1)],
       ],
-      hairType: [
+      hair_type: [
         this.newPets.hair_type,
         [Validators.required, Validators.minLength(1)],
       ],
@@ -46,8 +50,29 @@ export class ToolsComponent implements OnInit {
     })
   }
   public onSubmit(){
-    this.petsService.postPet(this.newPets).subscribe()
-    alert("Perreke Created")
-    this.petForm.reset();  
+    
+    if(this.petID !== ""){
+      this.petsService.putPet(this.petID, this.newPets).subscribe()
+      alert("Perreke Edited")
+    } else  {
+      this.petsService.postPet(this.newPets).subscribe()
+      alert("Perreke Created")
+    }
+    
+    this.petForm.reset();
+  this.router.navigate(["/gallery"])
+    
+    
+
   }
+
+  public delete(){
+    this.petsService.deletePet(this.newPets.id).subscribe();
+    this.petsService.clearPet();
+    alert ("Perreke Eliminado")
+    this.router.navigate(["/gallery"]);
+    
+  }
+
+  
 }

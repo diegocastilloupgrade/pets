@@ -28,22 +28,13 @@
       "picture": "https://www.elmundodelperro.net/fotos/91/2333_CachorrodelAfijoFacadavicFotoAlbertoNevado.jpg"
     },
     {
-      "breed": "Raza del perreke",
-      "caracter": "...",
-      "hair_type": "tipo de lope",
-      "size": "TAMAÑO",
-      "weight": "cuantos kilates",
-      "picture": "https://us.123rf.com/450wm/damedeeso/damedeeso1206/damedeeso120600018/14098767-perro-pidiendo-con-un-signo-de-interrogaci%C3%B3n-en-la-parte-superior.jpg",
+      "breed": "MUDI",
+      "caracter": "Equilibrado, Sociable y Activo",
+      "hairType": "Corto",
+      "size": "Mediano",
+      "weight": "10 - 25 kg",
+      "picture": "https://misanimales.com/wp-content/uploads/2018/01/raza-perro-mudi-pastor.jpg",
       "id": 4
-    },
-    {
-      "breed": "Raza del perreke",
-      "caracter": "...",
-      "hair_type": "tipo de lope",
-      "size": "TAMAÑO",
-      "weight": "cuantos kilates",
-      "picture": "https://us.123rf.com/450wm/damedeeso/damedeeso1206/damedeeso120600018/14098767-perro-pidiendo-con-un-signo-de-interrogaci%C3%B3n-en-la-parte-superior.jpg",
-      "id": 5
     }
   ]
 }

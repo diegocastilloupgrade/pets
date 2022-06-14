@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { GalleryRoutingModule } from './gallery-routing.module';
 import { GalleryComponent } from './gallery.component';
+import { PetCardComponent } from './components/pet-card/pet-card.component';
 
 
 @NgModule({
   declarations: [
-    GalleryComponent
+    GalleryComponent,
+    PetCardComponent
   ],
   imports: [
     CommonModule,
