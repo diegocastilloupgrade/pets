@@ -15,7 +15,8 @@ export class GalleryComponent implements OnInit {
 
   ngOnInit(): void {
     this.petsService.getPets().subscribe((data: any) => {
-      this.pets = data;
+      console.log(data)
+      this.pets = data.Perrekes;
       this.petsFiltrados = this.pets;
     });
   }

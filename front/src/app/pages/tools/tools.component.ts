@@ -12,7 +12,7 @@ export class ToolsComponent implements OnInit {
   public petForm!: FormGroup;
   public submmited: boolean = false;
   public newPets = this.petsService.petData;
-  public petID = this.petsService.petData.id;
+  public petID = this.petsService.petData._id;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -52,7 +52,8 @@ export class ToolsComponent implements OnInit {
   public onSubmit(){
     
     if(this.petID !== ""){
-      this.petsService.putPet(this.petID, this.newPets).subscribe()
+      this.petsService.patchPet(this.petID, this.newPets).subscribe()
+      console.log(this.newPets)
       alert("Perreke Edited")
     } else  {
       this.petsService.postPet(this.newPets).subscribe()
@@ -67,7 +68,7 @@ export class ToolsComponent implements OnInit {
   }
 
   public delete(){
-    this.petsService.deletePet(this.newPets.id).subscribe();
+    this.petsService.deletePet(this.newPets._id).subscribe();
     this.petsService.clearPet();
     alert ("Perreke Eliminado")
     this.router.navigate(["/gallery"]);
