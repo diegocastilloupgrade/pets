@@ -37,7 +37,7 @@ const getCatByID = async (req, res, next) => {
 
 const createCats = async (req, res, next) => {
   try {
-    const newCats = new Pets(req.body);
+    const newCats = new Cats(req.body);
     if (req.file) {
       newCats.imagen = req.file.path;
     }

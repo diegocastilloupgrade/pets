@@ -17,6 +17,11 @@ const routes: Routes = [
       import('./pages/gallery/gallery.module').then((m) => m.GalleryModule),
   },
   {
+    path: 'catsgallery',
+    loadChildren: () =>
+      import('./pages/gallery/gallery.module').then((m) => m.GalleryModule),
+  },
+  {
     path: 'tools',
     loadChildren: () =>
       import('./pages/tools/tools.module').then((m) => m.ToolsModule),
