@@ -1,5 +1,5 @@
 export interface petInterface {
-  id: number;
+  _id: number;
   breed: string;
   caracter: string;
   hair_type: string;

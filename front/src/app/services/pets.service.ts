@@ -15,9 +15,10 @@ export class PetsService {
         size: "",
         weight: "",
         picture: "",
-        id: ""
+        _id: ""
 
   }
+
 
   public clearPet () {
     this.petData = {
@@ -27,7 +28,7 @@ export class PetsService {
       size: "",
       weight: "",
       picture: "",
-      id: ""
+      _id: ""
     }
   }
 
@@ -36,22 +37,23 @@ export class PetsService {
   }
 
   public getPets() {
-    return this.httpClient.get("http://localhost:3000/pets")
+    return this.httpClient.get("http://localhost:8002/pets")
   }
 public postPet(newPet: any){
-  return this.httpClient.post("http://localhost:3000/pets", newPet)
+  return this.httpClient.post("http://localhost:8002/pets", newPet)
   
 }  
 
-public putPet( petID: any, editedPet: any) {
-  return this.httpClient.put("http://localhost:3000/pets/" + petID, editedPet )
+public patchPet( petID: any, editedPet: any) {
+  return this.httpClient.patch("http://localhost:8002/pets/" + petID, editedPet )
 }
 
 
 
 public deletePet(petID: any) {
-  return this.httpClient.delete("http://localhost:3000/pets/" + petID)
+  return this.httpClient.delete("http://localhost:8002/pets/" + petID)
 }
+
 
 
 
