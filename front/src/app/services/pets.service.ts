@@ -65,4 +65,7 @@ export class PetsService {
   public deletePet(petID: any) {
     return this.httpClient.delete('http://localhost:8002/pets/' + petID);
   }
+  public deleteCat(petID: any) {
+    return this.httpClient.delete('http://localhost:8002/cats/' + petID);
+  }
 }

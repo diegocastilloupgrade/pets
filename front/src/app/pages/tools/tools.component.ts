@@ -82,9 +82,16 @@ export class ToolsComponent implements OnInit {
   }
 
   public delete() {
-    this.petsService.deletePet(this.newPets._id).subscribe();
-    this.petsService.clearPet();
-    alert('Perreke Eliminado');
-    this.router.navigate(['/gallery']);
+    if (this.newPets.tipomascota === 'perro') {
+      this.petsService.deletePet(this.newPets._id).subscribe();
+      this.petsService.clearPet();
+      alert('Perreke Eliminado');
+      this.router.navigate(['/gallery']);
+    } else {
+      this.petsService.deleteCat(this.newPets._id).subscribe();
+      this.petsService.clearPet();
+      alert('Gaterre Eliminado');
+      this.router.navigate(['/catsgallery']);
+    }
   }
 }
