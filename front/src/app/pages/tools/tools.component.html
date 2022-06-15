@@ -2,6 +2,9 @@
   <h2>Create Perreke</h2>
   <form [formGroup]="petForm" (ngSubmit)="onSubmit()">
     <div>
+      <input type="text" formControlName="tipomascota">
+    </div>
+    <div>
       <label for="breed"> Breed</label>
       <input
         type="text"
@@ -58,69 +61,6 @@
     <div class="btnContainer">
       <button type="submit">PERREKE</button>
       <button (click)="delete()" class="delete">Delete Perreke</button>
-    </div>
-  </form>
-</section>
-<section>
-  <h2>Create Gaterre</h2>
-  <form [formGroup]="catForm" (ngSubmit)="onSubmitGaterre()">
-    <div>
-      <label for="breed"> Breed</label>
-      <input
-        type="text"
-        placeholder="Raza"
-        id="breed"
-        formControlName="breed"
-      />
-    </div>
-    <div>
-      <label for="picture">Picture</label>
-      <input
-        type="text"
-        placeholder="Imagen"
-        id="picture"
-        formControlName="picture"
-      />
-    </div>
-    <div>
-      <label for="caracter">Behavior</label>
-      <input
-        type="text"
-        placeholder="Carácter"
-        id="caracter"
-        formControlName="caracter"
-      />
-    </div>
-    <div>
-      <label for="hair_type">Hair Type</label>
-      <input
-        type="text"
-        placeholder="Tipo de Pelo"
-        id="hair_type"
-        formControlName="hair_type"
-      />
-    </div>
-    <div>
-      <label for="size">Size</label>
-      <input
-        type="text"
-        placeholder="Tamaño"
-        id="size"
-        formControlName="size"
-      />
-    </div>
-    <div>
-      <label for="weight">Weight</label>
-      <input
-        type="text"
-        placeholder="Peso"
-        id="weight"
-        formControlName="weight"
-      />
-    </div>
-    <div class="btnContainer">
-      <button type="submit">GATERRE</button>
-      <button (click)="delete()" class="delete">Delete Gaterre</button>
     </div>
   </form>
 </section>

@@ -9,6 +9,7 @@ export class PetsService {
   constructor(private httpClient: HttpClient) {}
 
   public petData = {
+    tipomascota: '',
     breed: '',
     caracter: '',
     hair_type: '',
@@ -20,6 +21,7 @@ export class PetsService {
 
   public clearPet() {
     this.petData = {
+      tipomascota:'',
       breed: '',
       caracter: '',
       hair_type: '',
@@ -58,7 +60,6 @@ export class PetsService {
       editedCat
     );
   }
-
 
   public deletePet(petID: any) {
     return this.httpClient.delete('http://localhost:8002/pets/' + petID);

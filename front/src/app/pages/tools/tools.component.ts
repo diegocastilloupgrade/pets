@@ -28,6 +28,10 @@ export class ToolsComponent implements OnInit {
     this.petsService.clearPet();
 
     this.petForm = this.formBuilder.group({
+      tipomascota: [
+        this.newPets.tipomascota,
+        [Validators.required, Validators.minLength(1)],
+      ],
       breed: [
         this.newPets.breed,
         [Validators.required, Validators.minLength(1)],
@@ -51,56 +55,33 @@ export class ToolsComponent implements OnInit {
     this.petForm.valueChanges.subscribe((changes) => {
       this.newPets = changes;
     });
-    
-    this.catForm = this.formBuilder.group({
-      breed: [
-        this.newCats.breed,
-        [Validators.required, Validators.minLength(1)],
-      ],
-      caracter: [
-        this.newCats.caracter,
-        [Validators.required, Validators.minLength(1)],
-      ],
-      hair_type: [
-        this.newCats.hair_type,
-        [Validators.required, Validators.minLength(1)],
-      ],
-      size: [this.newCats.size, [Validators.required, Validators.minLength(1)]],
-      weight: [
-        this.newCats.weight,
-        [Validators.required, Validators.minLength(1)],
-      ],
-      picture: [this.newCats.picture, [Validators.required]],
-    });
-    this.catForm.valueChanges.subscribe((changes) => {
-      this.newCats = changes;
-    });
   }
   public onSubmit() {
-    if (this.petID !== '') {
-      this.petsService.patchPet(this.petID, this.newPets).subscribe();
-      console.log(this.newPets);
-      alert('Perreke Edited');
-    } else {
-      this.petsService.postPet(this.newPets).subscribe();
-      alert('Perreke Created');
+    console.log('this.newPets.tipomascota',this.newPets.tipomascota)
+    if(this.newPets.tipomascota === "perro") {
+      if (this.petID !== '') {
+        this.petsService.patchPet(this.petID, this.newPets).subscribe();
+        console.log(this.newPets);
+        alert('Perreke Edited');
+      } else {
+        this.petsService.postPet(this.newPets).subscribe();
+        alert('Perreke Created');
+      }
+      this.petForm.reset();
+      this.router.navigate(['/gallery']);
+    } else if (this.newPets.tipomascota === "gato") {
+      if (this.catID !== '') {
+        this.catsService.patchCat(this.catID, this.newPets).subscribe();
+        console.log(this.newPets);
+        alert('Gaterre Edited');
+      } else {
+        this.catsService.postCat(this.newPets).subscribe();
+        alert('Gaterre Created');
+      }
+      this.petForm.reset();
+      this.router.navigate(['/catsgallery']);
     }
 
-    this.petForm.reset();
-    this.router.navigate(['/gallery']);
-  }
-  public onSubmitGaterre() {
-    if (this.catID !== '') {
-      this.catsService.patchCat(this.catID, this.newCats).subscribe();
-      console.log(this.newCats);
-      alert('Gaterre Edited');
-    } else {
-      this.catsService.postCat(this.newCats).subscribe();
-      alert('Gaterre Created');
-    }
-
-    this.catForm.reset();
-    this.router.navigate(['/catsgallery']);
   }
 
   public delete() {

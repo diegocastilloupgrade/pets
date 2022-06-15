@@ -6,6 +6,7 @@ export interface petInterface {
   picture: string;
   size: string;
   weight: string;
+  tipomascota: string;
 }
 export interface catInterface {
   _id: number;
