@@ -71,6 +71,15 @@
       "weight": "3-10kg",
       "picture": "https://i.imgur.com/VWtN3l8.jpg",
       "id": 8
+    },
+    {
+      "breed": "Chow Chow",
+      "caracter": "Fiel, Cariñoso y Activo",
+      "hair_type": "Medio",
+      "size": "Grande",
+      "weight": "15-20kg",
+      "picture": "https://heraldodemexico.com.mx/u/fotografias/m/2020/8/20/f638x638-249695_307862_5050.jpg",
+      "id": 9
     }
   ]
 }
