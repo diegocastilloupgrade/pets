@@ -10,13 +10,17 @@ import { Router } from '@angular/router';
 })
 export class ToolsComponent implements OnInit {
   public petForm!: FormGroup;
+  public catForm!: FormGroup;
   public submmited: boolean = false;
   public newPets = this.petsService.petData;
+  public newCats = this.petsService.petData;
   public petID = this.petsService.petData._id;
+  public catID = this.petsService.petData._id;
 
   constructor(
     private formBuilder: FormBuilder,
     private petsService: PetsService,
+    private catsService: PetsService,
     private router: Router
   ) {}
 
@@ -46,34 +50,63 @@ export class ToolsComponent implements OnInit {
 
     this.petForm.valueChanges.subscribe((changes) => {
       this.newPets = changes;
-     
-    })
-  }
-  public onSubmit(){
+    });
     
-    if(this.petID !== ""){
-      this.petsService.patchPet(this.petID, this.newPets).subscribe()
-      console.log(this.newPets)
-      alert("Perreke Edited")
-    } else  {
-      this.petsService.postPet(this.newPets).subscribe()
-      alert("Perreke Created")
+    this.catForm = this.formBuilder.group({
+      breed: [
+        this.newCats.breed,
+        [Validators.required, Validators.minLength(1)],
+      ],
+      caracter: [
+        this.newCats.caracter,
+        [Validators.required, Validators.minLength(1)],
+      ],
+      hair_type: [
+        this.newCats.hair_type,
+        [Validators.required, Validators.minLength(1)],
+      ],
+      size: [this.newCats.size, [Validators.required, Validators.minLength(1)]],
+      weight: [
+        this.newCats.weight,
+        [Validators.required, Validators.minLength(1)],
+      ],
+      picture: [this.newCats.picture, [Validators.required]],
+    });
+    this.catForm.valueChanges.subscribe((changes) => {
+      this.newCats = changes;
+    });
+  }
+  public onSubmit() {
+    if (this.petID !== '') {
+      this.petsService.patchPet(this.petID, this.newPets).subscribe();
+      console.log(this.newPets);
+      alert('Perreke Edited');
+    } else {
+      this.petsService.postPet(this.newPets).subscribe();
+      alert('Perreke Created');
     }
-    
-    this.petForm.reset();
-  this.router.navigate(["/gallery"])
-    
-    
 
+    this.petForm.reset();
+    this.router.navigate(['/gallery']);
+  }
+  public onSubmitGaterre() {
+    if (this.catID !== '') {
+      this.catsService.patchCat(this.catID, this.newCats).subscribe();
+      console.log(this.newCats);
+      alert('Gaterre Edited');
+    } else {
+      this.catsService.postCat(this.newCats).subscribe();
+      alert('Gaterre Created');
+    }
+
+    this.catForm.reset();
+    this.router.navigate(['/catsgallery']);
   }
 
-  public delete(){
+  public delete() {
     this.petsService.deletePet(this.newPets._id).subscribe();
     this.petsService.clearPet();
-    alert ("Perreke Eliminado")
-    this.router.navigate(["/gallery"]);
-    
+    alert('Perreke Eliminado');
+    this.router.navigate(['/gallery']);
   }
-
-  
 }
