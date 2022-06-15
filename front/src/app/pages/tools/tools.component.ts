@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { PetsService } from 'src/app/services/pets.service';
 import { Router } from '@angular/router';
@@ -9,13 +9,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./tools.component.scss'],
 })
 export class ToolsComponent implements OnInit {
+  @Input() pet!: any;
   public petForm!: FormGroup;
-  public catForm!: FormGroup;
   public submmited: boolean = false;
   public newPets = this.petsService.petData;
-  public newCats = this.petsService.petData;
   public petID = this.petsService.petData._id;
-  public catID = this.petsService.petData._id;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -57,8 +55,8 @@ export class ToolsComponent implements OnInit {
     });
   }
   public onSubmit() {
-    console.log('this.newPets.tipomascota',this.newPets.tipomascota)
-    if(this.newPets.tipomascota === "perro") {
+    console.log('this.newPets.tipomascota', this.newPets.tipomascota);
+    if (this.newPets.tipomascota === 'perro') {
       if (this.petID !== '') {
         this.petsService.patchPet(this.petID, this.newPets).subscribe();
         console.log(this.newPets);
@@ -69,9 +67,9 @@ export class ToolsComponent implements OnInit {
       }
       this.petForm.reset();
       this.router.navigate(['/gallery']);
-    } else if (this.newPets.tipomascota === "gato") {
-      if (this.catID !== '') {
-        this.catsService.patchCat(this.catID, this.newPets).subscribe();
+    } else if (this.newPets.tipomascota === 'gato') {
+      if (this.petID !== '') {
+        this.catsService.patchCat(this.petID, this.newPets).subscribe();
         console.log(this.newPets);
         alert('Gaterre Edited');
       } else {
@@ -81,7 +79,6 @@ export class ToolsComponent implements OnInit {
       this.petForm.reset();
       this.router.navigate(['/catsgallery']);
     }
-
   }
 
   public delete() {

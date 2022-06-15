@@ -10,6 +10,7 @@ const CatsSchema = new Schema(
     size: { type: String, required: true },
     weight: { type: String, required: true },
     picture: { type: String, required: true },
+    tipomascota: {type: String, required: true },
     
   },
   { timestamps: true }

@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PetsService {
   constructor(private httpClient: HttpClient) {}
-
+  public edition:boolean = false;
   public petData = {
     tipomascota: '',
     breed: '',
@@ -34,6 +34,7 @@ export class PetsService {
 
   public editItem(item: any) {
     this.petData = item;
+    this.edition = true;
   }
 
   public getPets() {

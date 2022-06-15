@@ -16,4 +16,5 @@ export interface catInterface {
   picture: string;
   size: string;
   weight: string;
+  tipomascota: string;
 }

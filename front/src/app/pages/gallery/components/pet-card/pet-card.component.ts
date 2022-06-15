@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class PetCardComponent implements OnInit {
   @Input() public pet!: any;
   
-  constructor(private petsService: PetsService, private catsService: PetsService, private router: Router) { }
+  constructor(private petsService: PetsService, private router: Router) { }
   
   ngOnInit(): void {
   }
@@ -20,10 +20,10 @@ export class PetCardComponent implements OnInit {
     this.petsService.editItem(pet);
     this.router.navigate(["/tools"]);
   }
-  public editCat(cat:any){
-    this.catsService.editItem(cat);
-    this.router.navigate(["/tools"]);
-  }
+  // public editCat(cat:any){
+  //   this.catsService.editItem(cat);
+  //   this.router.navigate(["/tools"]);
+  // }
 
   
   

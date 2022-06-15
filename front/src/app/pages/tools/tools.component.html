@@ -1,8 +1,13 @@
 <section>
-  <h2>Create Perreke</h2>
+  <h2>Crear o editar mascota</h2>
   <form [formGroup]="petForm" (ngSubmit)="onSubmit()">
     <div>
-      <input type="text" formControlName="tipomascota">
+      <!-- <input type="text" formControlName="tipomascota" placeholder=""> -->
+      <label for="tipomascota">Tipo de mascota</label>
+      <select name="" id="" formControlName="tipomascota" >
+        <option value="perro">Perro</option>
+        <option value="gato">Gato</option>
+      </select>
     </div>
     <div>
       <label for="breed"> Breed</label>
@@ -59,8 +64,9 @@
       />
     </div>
     <div class="btnContainer">
-      <button type="submit">PERREKE</button>
-      <button (click)="delete()" class="delete">Delete Perreke</button>
+
+      <button type="submit">Submit</button>
+      <button (click)="delete()" class="delete">Delete</button>
     </div>
   </form>
 </section>
