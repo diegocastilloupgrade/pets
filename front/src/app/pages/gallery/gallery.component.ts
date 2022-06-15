@@ -30,8 +30,8 @@ export class GalleryComponent implements OnInit {
     if (this.router.url === "/catsgallery") {
       this.petsService.getCats().subscribe((data: any) => {
         console.log("estos son mis datos de gatos",data);
-        this.cats = data.Gaterres;
-        this.petsFiltrados = this.cats;
+        this.pets = data.Gaterres;
+        this.petsFiltrados = this.pets;
       });
     }
   }
